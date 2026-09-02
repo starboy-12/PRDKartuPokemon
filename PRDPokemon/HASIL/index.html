@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokémon Card Vault PRD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-glow glow-one"></div>
+    <div class="bg-glow glow-two"></div>
+
+    <header class="topbar">
+      <div class="brand-wrap">
+        <div class="pokeball"></div>
+        <div>
+          <p class="eyebrow">Product Requirements Document</p>
+          <h1>Pokémon Card Vault</h1>
+        </div>
+      </div>
+      <span class="badge">pokemon_card_db</span>
+    </header>
+
+    <main class="container" id="prd-section">
+      <section class="hero card">
+        <div class="hero-copy">
+          <p class="label">Versi 1.0 • 2 September 2026</p>
+          <h2>KELOLA DAN KOLEKSI KARTU POKEMON</h2>
+          <p>
+            Pokémon Card Vault membantu kamu mengelola koleksi kartu Pokémon,
+            memantau stok, dan menata transaksi jual-beli dengan cara yang lebih
+            cepat, rapi, dan terorganisir.
+          </p>
+          <div class="hero-actions">
+            <button class="primary-btn" data-target="prd-section">
+              Lihat PRD
+            </button>
+            <button class="secondary-btn" data-target="dashboard-section">
+              Dashboard
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <div class="mini-card card-one">
+            <span>Collection</span>
+            <strong>1,248</strong>
+            <small>kartu tercatat</small>
+          </div>
+          <div class="mini-card card-two">
+            <span>Profit</span>
+            <strong>Rp 24.8M</strong>
+            <small>total laba</small>
+          </div>
+          <div class="mini-card card-three">
+            <span>Inventory</span>
+            <strong>92%</strong>
+            <small>stok aktif</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card dashboard-panel" id="dashboard-section">
+        <div class="section-header dashboard-header">
+          <div>
+            <p class="eyebrow">Dashboard</p>
+            <h3>Ringkasan koleksi dan transaksi</h3>
+          </div>
+          <button class="heading-btn">+ Tambah Kartu</button>
+        </div>
+
+        <div class="dashboard-stats">
+          <div class="stat-box cyan">
+            <span>Total Koleksi</span>
+            <strong>1,248</strong>
+            <small>+12% dari bulan lalu</small>
+          </div>
+          <div class="stat-box yellow">
+            <span>Nilai Investasi</span>
+            <strong>Rp 84.6Jt</strong>
+            <small>modal aktif</small>
+          </div>
+          <div class="stat-box red">
+            <span>Transaksi Hari Ini</span>
+            <strong>28</strong>
+            <small>8 kartu terjual</small>
+          </div>
+          <div class="stat-box green">
+            <span>Laba Bersih</span>
+            <strong>Rp 24.8M</strong>
+            <small>+16.4% bulan ini</small>
+          </div>
+        </div>
+
+        <div class="dashboard-grid">
+          <div class="panel-box">
+            <div class="panel-title">
+              <h4>Top Kartu Populer</h4>
+            </div>
+            <ul class="simple-list">
+              <li><span>Pikachu VMAX</span><strong>142</strong></li>
+              <li><span>Charizard ex</span><strong>98</strong></li>
+              <li><span>Bulbasaur 1st Edition</span><strong>61</strong></li>
+              <li><span>Gyarados V</span><strong>54</strong></li>
+            </ul>
+          </div>
+
+          <div class="panel-box">
+            <div class="panel-title">
+              <h4>Stok Rendah</h4>
+            </div>
+            <ul class="simple-list">
+              <li><span>Umbreon VMAX</span><strong>3</strong></li>
+              <li><span>Gengar ex</span><strong>5</strong></li>
+              <li><span>Lapras V</span><strong>2</strong></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="summary-grid" id="summary-grid"></section>
+
+      <section class="section-card">
+        <div class="section-header">
+          <p class="eyebrow">Functional Requirements</p>
+          <h3>Fitur utama sistem</h3>
+        </div>
+        <div id="functional-list" class="feature-list"></div>
+      </section>
+
+      <section class="two-column">
+        <div class="section-card">
+          <div class="section-header">
+            <p class="eyebrow">Non-Functional</p>
+            <h3>Standar kualitas</h3>
+          </div>
+          <div id="nfr-list" class="check-list"></div>
+        </div>
+
+        <div class="section-card">
+          <div class="section-header">
+            <p class="eyebrow">UI/UX</p>
+            <h3>Pengalaman pengguna</h3>
+          </div>
+          <div id="ux-list" class="check-list"></div>
+        </div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-header">
+          <p class="eyebrow">Business Rules</p>
+          <h3>Aturan bisnis</h3>
+        </div>
+        <div id="rules-list" class="rule-grid"></div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-header">
+          <p class="eyebrow">Acceptance Criteria</p>
+          <h3>Target penerimaan fitur</h3>
+        </div>
+        <div id="criteria-list" class="criteria-list"></div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-header">
+          <p class="eyebrow">Timeline</p>
+          <h3>Jadwal pengembangan</h3>
+        </div>
+        <div id="timeline-list" class="timeline"></div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-header">
+          <p class="eyebrow">Database</p>
+          <h3>Struktur data utama</h3>
+        </div>
+        <div id="database-table" class="table-wrap"></div>
+      </section>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
