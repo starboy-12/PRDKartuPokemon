@@ -27,6 +27,26 @@
       <span class="badge">pokemon_card_db</span>
     </header>
 
+    <nav class="site-nav" id="site-nav" aria-label="Navigasi section">
+      <div class="nav-inner">
+        <a href="#dashboard-section">Dashboard</a>
+        <a href="#koleksi-section">Koleksi</a>
+        <a href="#summary-grid">Ringkasan</a>
+        <a href="#persona-section">Personas</a>
+        <a href="#scope-section">Scope</a>
+        <a href="#fitur-section">Fitur</a>
+        <a href="#nfr-section">NFR/UX</a>
+        <a href="#tech-section">Tech Stack</a>
+        <a href="#rules-section">Rules</a>
+        <a href="#criteria-section">Kriteria</a>
+        <a href="#risk-section">Risiko</a>
+        <a href="#metrics-section">Metrik</a>
+        <a href="#timeline-section">Timeline</a>
+        <a href="#database-section">Database</a>
+        <a href="#roadmap-section">Roadmap</a>
+      </div>
+    </nav>
+
     <main class="container" id="prd-section">
       <section class="hero card">
         <div class="hero-copy">
@@ -72,7 +92,7 @@
             <p class="eyebrow">Dashboard</p>
             <h3>Ringkasan koleksi dan transaksi</h3>
           </div>
-          <button class="heading-btn">+ Tambah Kartu</button>
+          <button class="heading-btn" id="add-card-btn">+ Tambah Kartu</button>
         </div>
 
         <div class="dashboard-stats">
@@ -103,12 +123,7 @@
             <div class="panel-title">
               <h4>Top Kartu Populer</h4>
             </div>
-            <ul class="simple-list">
-              <li><span>Pikachu VMAX</span><strong>142</strong></li>
-              <li><span>Charizard ex</span><strong>98</strong></li>
-              <li><span>Bulbasaur 1st Edition</span><strong>61</strong></li>
-              <li><span>Gyarados V</span><strong>54</strong></li>
-            </ul>
+            <ul class="simple-list" id="popular-list"></ul>
           </div>
 
           <div class="panel-box">
@@ -124,9 +139,44 @@
         </div>
       </section>
 
+      <section class="section-card" id="koleksi-section">
+        <div class="section-header">
+          <p class="eyebrow">Koleksi Kartu</p>
+          <h3>Grid kartu dengan filter</h3>
+        </div>
+        <div class="filter-bar">
+          <label>
+            <span>Rarity</span>
+            <select id="filter-rarity"></select>
+          </label>
+          <label>
+            <span>Tipe</span>
+            <select id="filter-tipe"></select>
+          </label>
+          <span class="filter-count" id="filter-count"></span>
+        </div>
+        <div id="collection-grid" class="collection-grid"></div>
+      </section>
+
       <section class="summary-grid" id="summary-grid"></section>
 
-      <section class="section-card">
+      <section class="section-card" id="persona-section">
+        <div class="section-header">
+          <p class="eyebrow">User Persona</p>
+          <h3>Siapa yang memakai produk ini</h3>
+        </div>
+        <div id="persona-list" class="persona-grid"></div>
+      </section>
+
+      <section class="section-card" id="scope-section">
+        <div class="section-header">
+          <p class="eyebrow">Scope Project</p>
+          <h3>Batasan pengerjaan</h3>
+        </div>
+        <div id="scope-list" class="scope-grid"></div>
+      </section>
+
+      <section class="section-card" id="fitur-section">
         <div class="section-header">
           <p class="eyebrow">Functional Requirements</p>
           <h3>Fitur utama sistem</h3>
@@ -134,7 +184,7 @@
         <div id="functional-list" class="feature-list"></div>
       </section>
 
-      <section class="two-column">
+      <section class="two-column" id="nfr-section">
         <div class="section-card">
           <div class="section-header">
             <p class="eyebrow">Non-Functional</p>
@@ -152,7 +202,15 @@
         </div>
       </section>
 
-      <section class="section-card">
+      <section class="section-card" id="tech-section">
+        <div class="section-header">
+          <p class="eyebrow">Technical Requirements</p>
+          <h3>Tech stack</h3>
+        </div>
+        <div id="tech-list" class="tech-grid"></div>
+      </section>
+
+      <section class="section-card" id="rules-section">
         <div class="section-header">
           <p class="eyebrow">Business Rules</p>
           <h3>Aturan bisnis</h3>
@@ -160,7 +218,7 @@
         <div id="rules-list" class="rule-grid"></div>
       </section>
 
-      <section class="section-card">
+      <section class="section-card" id="criteria-section">
         <div class="section-header">
           <p class="eyebrow">Acceptance Criteria</p>
           <h3>Target penerimaan fitur</h3>
@@ -168,7 +226,23 @@
         <div id="criteria-list" class="criteria-list"></div>
       </section>
 
-      <section class="section-card">
+      <section class="section-card" id="risk-section">
+        <div class="section-header">
+          <p class="eyebrow">Risiko &amp; Mitigasi</p>
+          <h3>Antisipasi masalah</h3>
+        </div>
+        <div id="risk-table" class="table-wrap"></div>
+      </section>
+
+      <section class="section-card" id="metrics-section">
+        <div class="section-header">
+          <p class="eyebrow">Success Metrics</p>
+          <h3>Target 3 bulan pasca-launch</h3>
+        </div>
+        <div id="metrics-list" class="metric-grid"></div>
+      </section>
+
+      <section class="section-card" id="timeline-section">
         <div class="section-header">
           <p class="eyebrow">Timeline</p>
           <h3>Jadwal pengembangan</h3>
@@ -176,14 +250,107 @@
         <div id="timeline-list" class="timeline"></div>
       </section>
 
-      <section class="section-card">
+      <section class="section-card" id="database-section">
         <div class="section-header">
           <p class="eyebrow">Database</p>
           <h3>Struktur data utama</h3>
         </div>
         <div id="database-table" class="table-wrap"></div>
       </section>
+
+      <section class="section-card" id="roadmap-section">
+        <div class="section-header">
+          <p class="eyebrow">Future Development</p>
+          <h3>Roadmap lanjutan</h3>
+        </div>
+        <div id="roadmap-list" class="roadmap-grid"></div>
+      </section>
     </main>
+
+    <footer class="site-footer">
+      <p>Pokémon Card Vault PRD v1.0 • SatrioS Studio • Draft — Final Review</p>
+    </footer>
+
+    <div class="modal-overlay" id="card-modal" hidden>
+      <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="card-modal-title"
+      >
+        <div class="modal-header">
+          <div>
+            <p class="eyebrow">Form Dummy</p>
+            <h3 id="card-modal-title">Tambah Kartu Pokémon</h3>
+          </div>
+          <button class="modal-close" id="modal-close" aria-label="Tutup">
+            ×
+          </button>
+        </div>
+
+        <form class="modal-form" id="card-form">
+          <label>
+            <span>Nama kartu</span>
+            <input name="nama_kartu" required placeholder="Pikachu VMAX" />
+          </label>
+          <label>
+            <span>Set kartu</span>
+            <input name="set_kartu" required placeholder="Vivid Voltage" />
+          </label>
+          <label>
+            <span>Rarity</span>
+            <select name="rarity" id="form-rarity" required></select>
+          </label>
+          <label>
+            <span>Tipe</span>
+            <select name="tipe" id="form-tipe" required></select>
+          </label>
+          <label>
+            <span>Harga modal (Rp)</span>
+            <input
+              name="harga_modal"
+              type="number"
+              min="0"
+              required
+              value="250000"
+            />
+          </label>
+          <label>
+            <span>Harga jual (Rp)</span>
+            <input
+              name="harga_jual"
+              type="number"
+              min="0"
+              required
+              value="400000"
+            />
+          </label>
+          <label>
+            <span>Stok</span>
+            <input name="stok" type="number" min="1" required value="1" />
+          </label>
+          <label>
+            <span>Kondisi</span>
+            <select name="kondisi" required>
+              <option>Mint</option>
+              <option>Near Mint</option>
+              <option>Excellent</option>
+              <option>Good</option>
+              <option>Played</option>
+            </select>
+          </label>
+
+          <div class="modal-actions">
+            <button type="button" class="secondary-btn" id="modal-cancel">
+              Batal
+            </button>
+            <button type="submit" class="primary-btn">Simpan Kartu</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" hidden></div>
 
     <script src="main.js"></script>
   </body>
