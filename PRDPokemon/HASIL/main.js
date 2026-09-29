@@ -259,6 +259,220 @@ const databaseRows = [
   },
 ];
 
+const personas = [
+  {
+    initial: "A",
+    name: "Andra",
+    role: "Kolektor baru",
+    text: "Butuh sistem sederhana untuk memantau koleksi dan transaksi kartu miliknya.",
+    needs: ["Dashboard ringkas", "Input kartu cepat", "Riwayat transaksi"],
+  },
+  {
+    initial: "B",
+    name: "Budi",
+    role: "Penjual kartu senior",
+    text: "Butuh inventaris detail untuk mengelola ratusan kartu beserta stok dan labanya.",
+    needs: ["Stok real-time", "Laporan laba", "Filter set & rarity"],
+  },
+];
+
+const scopeData = [
+  {
+    type: "In-Scope",
+    tone: "in",
+    items: [
+      "Autentikasi user",
+      "CRUD kartu Pokémon",
+      "Pencatatan transaksi",
+      "Upload bukti transaksi",
+      "Dashboard koleksi",
+    ],
+  },
+  {
+    type: "Out-of-Scope",
+    tone: "out",
+    items: ["Integrasi marketplace besar", "Lelang online", "Aplikasi native"],
+  },
+];
+
+const techStack = [
+  { layer: "Frontend", tech: "Next.js (App Router), TypeScript, Tailwind CSS" },
+  { layer: "Backend", tech: "Next.js API Routes / Server Actions" },
+  { layer: "Database", tech: "PostgreSQL" },
+  { layer: "ORM", tech: "Prisma" },
+  { layer: "Autentikasi", tech: "Better Auth" },
+  { layer: "File Storage", tech: "Vercel Blob" },
+  { layer: "Hosting", tech: "Vercel" },
+  {
+    layer: "Notifikasi",
+    tech: "Email (Resend/SMTP), in-app notification (iterasi berikutnya)",
+  },
+  { layer: "Cron Job", tech: "Vercel Cron untuk laporan harian kartu Pokémon" },
+];
+
+const risks = [
+  {
+    risk: "User tidak konsisten input data kartu",
+    impact: "Laporan dan stok tidak akurat",
+    mitigation: "Tambahkan validasi dan reminder input.",
+  },
+  {
+    risk: "Kegagalan pengiriman email notifikasi",
+    impact: "User tidak menerima info stok",
+    mitigation: "Tambahkan in-app notification.",
+  },
+  {
+    risk: "Biaya storage foto bukti transaksi",
+    impact: "Cost operasional naik",
+    mitigation: "Batasi ukuran foto dan kompresi otomatis.",
+  },
+  {
+    risk: "Kebocoran data antar user",
+    impact: "Masalah privasi",
+    mitigation: "Terapkan row-level authorization ketat.",
+  },
+  {
+    risk: "Fluktuasi harga kartu pasar",
+    impact: "Laporan laba tidak akurat",
+    mitigation: "Sediakan pilihan harga modal/jual manual dan estimasi pasar.",
+  },
+];
+
+const metrics = [
+  { label: "Jumlah user terdaftar", target: "200", unit: "user" },
+  { label: "Retensi bulanan", target: "≥ 40%", unit: "per bulan" },
+  { label: "Rata-rata kartu per user", target: "≥ 1.3", unit: "kartu" },
+  {
+    label: "Tingkat keberhasilan notifikasi",
+    target: "≥ 95%",
+    unit: "terkirim",
+  },
+  { label: "Rating kepuasan pengguna", target: "≥ 4.0", unit: "dari 5.0" },
+  {
+    label: "Total transaksi kartu tercatat",
+    target: "≥ 500",
+    unit: "transaksi",
+  },
+];
+
+const roadmap = [
+  {
+    title: "Aplikasi mobile native",
+    text: "Android/iOS untuk akses lebih luas.",
+  },
+  {
+    title: "Family Sharing / Multi-user",
+    text: "Berbagi akses antar anggota keluarga atau tim koleksi.",
+  },
+  {
+    title: "Integrasi Marketplace",
+    text: "Jual-beli langsung dari aplikasi ke komunitas.",
+  },
+  {
+    title: "Rekomendasi harga kartu",
+    text: "Berdasarkan rarity, set, dan tren pasar.",
+  },
+  {
+    title: "Analitik biaya",
+    text: "Grafik pengeluaran, investasi, dan laba per bulan.",
+  },
+  {
+    title: "Mode multi-bahasa",
+    text: "Ekspansi ke luar Indonesia dan komunitas global.",
+  },
+  {
+    title: "Scan kartu / OCR",
+    text: "Teknologi untuk membaca kartu dari foto secara otomatis.",
+  },
+];
+
+const rarities = [
+  "Common",
+  "Rare",
+  "Rare Holo",
+  "Ultra Rare",
+  "Secret Rare",
+  "1st Edition",
+];
+
+const cardTypes = ["Electric", "Fire", "Grass", "Water", "Darkness", "Psychic"];
+
+const collection = [
+  {
+    name: "Pikachu VMAX",
+    set: "Vivid Voltage",
+    rarity: "Ultra Rare",
+    type: "Electric",
+    stok: 12,
+    harga: 1850000,
+  },
+  {
+    name: "Charizard ex",
+    set: "Obsidian Flames",
+    rarity: "Secret Rare",
+    type: "Fire",
+    stok: 4,
+    harga: 3400000,
+  },
+  {
+    name: "Bulbasaur 1st Edition",
+    set: "Base Set",
+    rarity: "1st Edition",
+    type: "Grass",
+    stok: 2,
+    harga: 5600000,
+  },
+  {
+    name: "Gyarados V",
+    set: "Silver Tempest",
+    rarity: "Rare Holo",
+    type: "Water",
+    stok: 9,
+    harga: 720000,
+  },
+  {
+    name: "Umbreon VMAX",
+    set: "Evolving Skies",
+    rarity: "Secret Rare",
+    type: "Darkness",
+    stok: 3,
+    harga: 8900000,
+  },
+  {
+    name: "Gengar ex",
+    set: "Shrouded Fable",
+    rarity: "Ultra Rare",
+    type: "Psychic",
+    stok: 5,
+    harga: 1250000,
+  },
+  {
+    name: "Lapras V",
+    set: "Chilling Reign",
+    rarity: "Rare",
+    type: "Water",
+    stok: 2,
+    harga: 310000,
+  },
+  {
+    name: "Leafeon VSTAR",
+    set: "Evolving Skies",
+    rarity: "Rare Holo",
+    type: "Grass",
+    stok: 7,
+    harga: 640000,
+  },
+];
+
+const popularCards = [
+  { name: "Pikachu VMAX", value: 142 },
+  { name: "Charizard ex", value: 98 },
+  { name: "Bulbasaur 1st Edition", value: 61 },
+  { name: "Gyarados V", value: 54 },
+];
+
+const rupiah = (value) => `Rp ${value.toLocaleString("id-ID")}`;
+
 function renderSummary() {
   const container = document.getElementById("summary-grid");
   container.innerHTML = summaryData
@@ -379,6 +593,274 @@ function renderDatabase() {
   `;
 }
 
+function renderPersonas() {
+  const container = document.getElementById("persona-list");
+  container.innerHTML = personas
+    .map(
+      (item) => `
+    <article class="persona-item">
+      <div class="persona-head">
+        <span class="persona-avatar">${item.initial}</span>
+        <div>
+          <strong>${item.name}</strong>
+          <p class="persona-role">${item.role}</p>
+        </div>
+      </div>
+      <p>${item.text}</p>
+      <ul class="tag-list">
+        ${item.needs.map((need) => `<li>${need}</li>`).join("")}
+      </ul>
+    </article>
+  `,
+    )
+    .join("");
+}
+
+function renderScope() {
+  const container = document.getElementById("scope-list");
+  container.innerHTML = scopeData
+    .map(
+      (group) => `
+    <div class="scope-item scope-${group.tone}">
+      <strong>${group.type}</strong>
+      <ul>
+        ${group.items.map((item) => `<li>${item}</li>`).join("")}
+      </ul>
+    </div>
+  `,
+    )
+    .join("");
+}
+
+function renderTech() {
+  const container = document.getElementById("tech-list");
+  container.innerHTML = techStack
+    .map(
+      (item) => `
+    <div class="tech-item">
+      <span class="tech-layer">${item.layer}</span>
+      <p>${item.tech}</p>
+    </div>
+  `,
+    )
+    .join("");
+}
+
+function renderRisks() {
+  const container = document.getElementById("risk-table");
+  container.innerHTML = `
+    <table>
+      <thead>
+        <tr>
+          <th>Risiko</th>
+          <th>Dampak</th>
+          <th>Mitigasi</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${risks
+          .map(
+            (row) => `
+          <tr>
+            <td>${row.risk}</td>
+            <td>${row.impact}</td>
+            <td>${row.mitigation}</td>
+          </tr>
+        `,
+          )
+          .join("")}
+      </tbody>
+    </table>
+  `;
+}
+
+function renderMetrics() {
+  const container = document.getElementById("metrics-list");
+  container.innerHTML = metrics
+    .map(
+      (item) => `
+    <div class="metric-item">
+      <strong>${item.target}</strong>
+      <span>${item.unit}</span>
+      <p>${item.label}</p>
+    </div>
+  `,
+    )
+    .join("");
+}
+
+function renderRoadmap() {
+  const container = document.getElementById("roadmap-list");
+  container.innerHTML = roadmap
+    .map(
+      (item) => `
+    <div class="roadmap-item">
+      <strong>${item.title}</strong>
+      <p>${item.text}</p>
+    </div>
+  `,
+    )
+    .join("");
+}
+
+function renderPopular() {
+  const container = document.getElementById("popular-list");
+  container.innerHTML = popularCards
+    .map(
+      (item) => `
+    <li><span>${item.name}</span><strong>${item.value}</strong></li>
+  `,
+    )
+    .join("");
+}
+
+function fillSelect(id, options, allLabel) {
+  const select = document.getElementById(id);
+  const values = allLabel ? [allLabel, ...options] : options;
+  select.innerHTML = values
+    .map((value) => `<option value="${value}">${value}</option>`)
+    .join("");
+}
+
+function renderCollection() {
+  const grid = document.getElementById("collection-grid");
+  const rarity = document.getElementById("filter-rarity").value;
+  const type = document.getElementById("filter-tipe").value;
+
+  const filtered = collection.filter(
+    (card) =>
+      (rarity === "Semua rarity" || card.rarity === rarity) &&
+      (type === "Semua tipe" || card.type === type),
+  );
+
+  document.getElementById("filter-count").textContent =
+    `${filtered.length} dari ${collection.length} kartu`;
+
+  grid.innerHTML = filtered.length
+    ? filtered
+        .map(
+          (card) => `
+    <article class="poke-card type-${card.type.toLowerCase()}">
+      <div class="poke-card-top">
+        <span class="poke-rarity">${card.rarity}</span>
+        <span class="poke-type">${card.type}</span>
+      </div>
+      <strong>${card.name}</strong>
+      <p class="poke-set">${card.set}</p>
+      <div class="poke-card-foot">
+        <span>${rupiah(card.harga)}</span>
+        <span>Stok ${card.stok}</span>
+      </div>
+    </article>
+  `,
+        )
+        .join("")
+    : `<p class="empty-state">Tidak ada kartu yang cocok dengan filter ini.</p>`;
+}
+
+function setupCollectionFilters() {
+  fillSelect("filter-rarity", rarities, "Semua rarity");
+  fillSelect("filter-tipe", cardTypes, "Semua tipe");
+  document
+    .getElementById("filter-rarity")
+    .addEventListener("change", renderCollection);
+  document
+    .getElementById("filter-tipe")
+    .addEventListener("change", renderCollection);
+  renderCollection();
+}
+
+let toastTimer;
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.hidden = false;
+  toast.classList.add("is-visible");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => {
+    toast.classList.remove("is-visible");
+    toast.hidden = true;
+  }, 3200);
+}
+
+function setupModal() {
+  const modal = document.getElementById("card-modal");
+  const form = document.getElementById("card-form");
+
+  fillSelect("form-rarity", rarities);
+  fillSelect("form-tipe", cardTypes);
+
+  const openModal = () => {
+    modal.hidden = false;
+    document.body.classList.add("modal-open");
+    form.querySelector("input").focus();
+  };
+
+  const closeModal = () => {
+    modal.hidden = true;
+    document.body.classList.remove("modal-open");
+  };
+
+  document.getElementById("add-card-btn").addEventListener("click", openModal);
+  document.getElementById("modal-close").addEventListener("click", closeModal);
+  document.getElementById("modal-cancel").addEventListener("click", closeModal);
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !modal.hidden) {
+      closeModal();
+    }
+  });
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    collection.unshift({
+      name: data.nama_kartu,
+      set: data.set_kartu,
+      rarity: data.rarity,
+      type: data.tipe,
+      stok: Number(data.stok),
+      harga: Number(data.harga_jual),
+    });
+    popularCards.unshift({ name: data.nama_kartu, value: Number(data.stok) });
+
+    renderPopular();
+    renderCollection();
+    form.reset();
+    closeModal();
+    showToast(`${data.nama_kartu} berhasil ditambahkan ke koleksi.`);
+  });
+}
+
+function setupNavHighlight() {
+  const links = Array.from(document.querySelectorAll(".site-nav a"));
+  const sections = links
+    .map((link) => document.querySelector(link.getAttribute("href")))
+    .filter(Boolean);
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        links.forEach((link) =>
+          link.classList.toggle(
+            "is-active",
+            link.getAttribute("href") === `#${entry.target.id}`,
+          ),
+        );
+      });
+    },
+    { rootMargin: "-40% 0px -55% 0px" },
+  );
+
+  sections.forEach((section) => observer.observe(section));
+}
+
 renderSummary();
 renderFunctional();
 renderCheckList("nfr-list", nfrData);
@@ -387,3 +869,13 @@ renderRules();
 renderCriteria();
 renderTimeline();
 renderDatabase();
+renderPersonas();
+renderScope();
+renderTech();
+renderRisks();
+renderMetrics();
+renderRoadmap();
+renderPopular();
+setupCollectionFilters();
+setupModal();
+setupNavHighlight();
